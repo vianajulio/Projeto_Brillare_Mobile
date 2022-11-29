@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Projeto_Brillare</string>
+
+    <string name="txtBrillareTitulo">Brillare</string>
+    <string name="txtBrillareSubtitulo">Semi-Jóias</string>
+
+    <string name="txtUsuario">Usuário</string>
+    <string name="txtLogin">Login</string>
+    <string name="txtRegistreSe">Registre-se</string>
+
+    <string name="txtEmail">E-mail</string>
+    <string name="txtSenha">Senha</string>
+    <string name="txtConfirmarSenha">Confirmar Senha</string>
+
+    <string name="txtEmailEsqueceuSenha">Por favor, digite seu e-mail. Você receberá um e-mail com um link para ser criada a nova senha.</string>
+
+    <string name="txtTitulo">Titulo</string>
+    <string name="txtDescricao">Descrição</string>
+    <string name="txtPreco">Preço</string>
+    <string name="real">R$</string>
+
+    <string name="addCarrinho">Adicionar ao carrinho</string>
+
+
+    <!-- Nome dos produtos -->
+    <array name="nomeProdutos">
+        <item>Gatin</item>
+        <item>Tenis</item>
+        <item>Bombado</item>
+        <item>Eu</item>
+        <item>VC</item>
+        <item>ELE</item>
+    </array>
+
+    <!-- Descrição dos produtos -->
+    <array name="descProdutos">
+        <item>Um dos gatos é meu</item>
+        <item>Quero usar pra treina</item>
+        <item>Quero ser assim 😭</item>
+        <item>Quero ser assim 😭</item>
+        <item>Quero ser assim 😭</item>
+        <item>Quero ser assim 😭</item>
+    </array>
+
+    <!-- Preço dos produtos -->
+    <integer-array name="precoProduto">
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>40</item>
+        <item>40</item>
+    </integer-array>
+
+    <!-- Forma de pagamento -->
+    <string name="txtFormaDePagamento">Forma de Pagamento</string>
+    <string name="txtCartao">Cartão de Crédito</string>
+    <string name="txtPix">PIX</string>
+
+
+
+</resources>
