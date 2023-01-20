@@ -1,9 +1,12 @@
 <resources>
-    <string name="app_name">Projeto_Brillare</string>
+    <string name="app_name">Brillare</string>
+    <string name="dados_cliente_shared">com.example.projeto_brillare.DADOS_CLIENTE_SHARED_KEY</string>
+    <string name="endereco_shared">com.example.projeto_brillare.ENDERECO_SHARED_KEY</string>
 
     <string name="txtBrillareTitulo">Brillare</string>
     <string name="txtBrillareSubtitulo">Semi-Jóias</string>
 
+    <string name="txtNome">Nome</string>
     <string name="txtUsuario">Usuário</string>
     <string name="txtLogin">Login</string>
     <string name="txtRegistreSe">Registre-se</string>
@@ -21,42 +24,137 @@
 
     <string name="addCarrinho">Adicionar ao carrinho</string>
 
+    <string name="txtDados">Seus Dados</string>
+    <string name="txtEndereco">Endereço</string>
+    <string name="txtSalvarEndereco">Salvar Endereco</string>
+
+    <string name="txtInsiraDados">Insira seus dados</string>
+    <string name="txtInsiraEmail">Insira seu e-mail de contato.</string>
+    <string name="txtInsiraNome">Seu nome.</string>
+    <string name="txtObrigatorio">Obrigatório insirir.</string>
+
+    <string name="txtRua">Rua</string>
+    <string name="txtNumero">Numero</string>
+    <string name="txtBairro">Bairro</string>
+    <string name="txtCEP">CEP</string>
+    <string name="txtComplemento">Complemento</string>
+    <string name="txtFrete">Valor do frete</string>
+    <string name="txtFreteRS">15.00</string>
+    <string name="txtSubtotal">Subtotal</string>
+
+    <string name="txtLimparCarrinho">Limpar carrinho</string>
+    <string name="txtContinua">Continuar</string>
+    <string name="txtCancelar">Cancelar</string>
+    <string name="txtFinalizar">Finalizar</string>
+
+    <string name="txtExemploEmail">exemplo_email@gmail.com</string>
+    <string name="txtExemploNome">Exemplo de Nome Completo</string>
+    <string name="txtExemploSenha">*********</string>
+
+    <string name="txtEnviar">Enviar</string>
 
     <!-- Nome dos produtos -->
     <array name="nomeProdutos">
-        <item>Gatin</item>
-        <item>Tenis</item>
-        <item>Bombado</item>
-        <item>Eu</item>
-        <item>VC</item>
-        <item>ELE</item>
+        <item>Brincos diamante dourados</item>
+        <item>Brincos trançados dourados</item>
+        <item>Colar de borboleta</item>
+        <item>Colar dourado laminado</item>
+        <item>Colar lua</item>
+        <item>Pulseira dourada</item>
+        <item>Pulseira ice</item>
+        <item>Brincos de zircornia</item>
+        <item>Cruxifixo</item>
+        <item>Brincos Zirconia</item>
+        <item>Anel prata zirconia</item>
+        <item>Conjunto colar e brinco</item>
+        <item>Colar dourado com zirconia</item>
+        <item>Colar coração - dourado</item>
+        <item>Colar coração - prata</item>
+        <item>Conjunto colar e brincos</item>
+        <item>Conjunto colar e brincos</item>
+        <item>Conjunto pulseiras</item>
     </array>
 
     <!-- Descrição dos produtos -->
     <array name="descProdutos">
-        <item>Um dos gatos é meu</item>
-        <item>Quero usar pra treina</item>
-        <item>Quero ser assim 😭</item>
-        <item>Quero ser assim 😭</item>
-        <item>Quero ser assim 😭</item>
-        <item>Quero ser assim 😭</item>
+        <item>Brincos em forma de diamante, dourado e banhando a ouro.</item>
+        <item>Brincos em forma de espiral, banhando ouro.</item>
+        <item>Colar de borboleta, banhado a ouro com uma pedra de morganita.</item>
+        <item>Colar laminado, banhando a ouro.</item>
+        <item>Colar com pigente de lua e com um pingente de zircônia vermelha.</item>
+        <item>Pulseira em forma de corrente, feita a ouro.</item>
+        <item>Pulseira ice, docorada com pedras de zircônia.</item>
+        <item>Brincos com pedra de zirconia e com perolas.</item>
+        <item>Brincos delicados com pedras de zirconia.</item>
+        <item>Crucifixo feito em prata.</item>
+        <item>Brincos banhados a prata, com pedras de zircônia.</item>
+        <item>Anel banhado em prata, com predras de zircônia, nas cores: azul, vermelho e verde.
+        </item>
+        <item>Decoração nos brincos e colar, com pedras de zircônias nas cores: amarelho, azul,
+            verde, vermelho, roxo e transparente.
+        </item>
+        <item>Colar banhado a ouro, com detalhes de pedras de zircônia.</item>
+        <item>Colar com forma de coração banhado a ouro, com detalhes de pedra de zircônia, metade
+            na cor rosa e outra metade transparente.
+        </item>
+        <item>Colares com forma de coração banhado a prata com detalhes de pedra de zircônia, nas
+            cores: verde, azul e rosa.
+        </item>
+        <item>Conjunto de colar e brincos, banhados a prata com detalhes de pedra de zircônia
+            verde.
+        </item>
+        <item>Conjunto de colar e brincos, banhados a prata com detalhes de pedra de zircônia
+            vermelho.
+        </item>
+        <item>Conjunto de pulseiras, uma banhada a ouro e outra a prata, com detalhes com predras de
+            zircônia transparente.
+        </item>
     </array>
 
     <!-- Preço dos produtos -->
     <integer-array name="precoProduto">
-        <item>10</item>
-        <item>20</item>
+        <item>60</item>
+        <item>70</item>
+        <item>80</item>
+        <item>100</item>
+        <item>120</item>
+        <item>80</item>
+        <item>150</item>
+        <item>50</item>
+        <item>70</item>
+
         <item>30</item>
         <item>40</item>
-        <item>40</item>
-        <item>40</item>
+        <item>50</item>
+        <item>60</item>
+        <item>50</item>
+        <item>30</item>
+        <item>70</item>
+        <item>60</item>
+        <item>50</item>
     </integer-array>
 
     <!-- Forma de pagamento -->
+    <string name="txtSelecionePagamento">Selecione uma das opções a abaixo</string>
     <string name="txtFormaDePagamento">Forma de Pagamento</string>
     <string name="txtCartao">Cartão de Crédito</string>
     <string name="txtPix">PIX</string>
+    <string name="valorTotal">Total</string>
+    <string name="txtChavePix">68057efd-7149-4fa7-84ac-0798d50936ce</string>
+    <string name="txtEscaneieQRCode">Escaneie o código QR Code a baixo</string>
 
-
+    <!-- Fragment Forma de Pagamento Cartão-->
+    <string name="hintNumCartao">Número do Cartão</string>
+    <string name="hintNomeCartao">Nome Gravado</string>
+    <string name="hintMesExpiracao">Mês de Expiração</string>
+    <string name="hintAnoExpiracao">Ano de Expiração</string>
+    <string name="hintCodigoSeguranca">CVV</string>
+    <string name="txtNovoEndereco">Novo Endereco</string>
+    <string name="txtAddEndereco">Add Endereco</string>
+    <string name="txtAtualizar">Atualizar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txtObrigadoCompra">Obrigado pela preferência!</string>
+    <string name="txtCompraFinalizada">Compra Finalizada!</string>
 
 </resources>

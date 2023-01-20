@@ -1,13 +1,13 @@
 package classes;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Cliente implements Serializable {
 
     private String usuario;
     private String email;
     private String senha;
-    private String endereco;
 
     public Cliente(String usuario, String email, String senha) {
         this.usuario = usuario;
@@ -27,7 +27,6 @@ public class Cliente implements Serializable {
         return senha;
     }
 
-    public String getEndereco() {
-        return endereco;
-    }
+
 }
+

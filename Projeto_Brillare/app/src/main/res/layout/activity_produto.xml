@@ -13,6 +13,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
+        android:elevation="4dp"
         android:text="@string/addCarrinho"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,13 +21,16 @@
 
     <ImageView
         android:id="@+id/imageViewProduto"
-        android:layout_width="wrap_content"
-        android:layout_height="360dp"
+        android:layout_width="0dp"
+        android:layout_height="320dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:elevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButtonVoltarHome"
-        app:srcCompat="@drawable/gato" />
+        app:srcCompat="@drawable/colar_borboleta" />
 
     <TextView
         android:id="@+id/textViewTitulo"
@@ -42,11 +46,14 @@
 
     <TextView
         android:id="@+id/textViewDescricao"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
         android:text="@string/txtDescricao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitulo" />
 
@@ -54,13 +61,12 @@
         android:id="@+id/textViewPreco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="4dp"
         android:text="@string/txtPreco"
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/textViewDescricao" />
+        app:layout_constraintTop_toTopOf="@+id/textView9" />
 
     <ImageButton
         android:id="@+id/imageButtonVoltarHome"
@@ -80,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:text="R$"
         android:textSize="18dp"
         android:textStyle="bold"

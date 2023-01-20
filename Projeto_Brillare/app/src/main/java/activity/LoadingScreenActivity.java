@@ -21,7 +21,7 @@ public class LoadingScreenActivity extends AppCompatActivity {
                 startActivity(new Intent(LoadingScreenActivity.this, MainActivity.class));
                 finish();
             }
-        }, 1000);
+        }, 500);
 
 
     }

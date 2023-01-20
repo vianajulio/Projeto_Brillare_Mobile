@@ -6,29 +6,34 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.projeto_brillare.R;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import classes.Cliente;
+import classes.Produto;
 
 public class LoginActivity extends AppCompatActivity {
 
     private Button btnLogin, btnCadastro;
     private TextView txtViewEsqueceuSenha;
-    private TextInputEditText inputEmail, inputSenha;
+    private TextInputEditText inputUsuario, inputSenha;
+    private TextInputLayout inputLayoutUser, inputLayoutPass;
 
-     List<Cliente> clientes = new ArrayList<>();
+    private List<Cliente> clientes = new ArrayList<>();
 
     ActivityResultLauncher<Intent> resultado = registerForActivityResult(new
                     ActivityResultContracts.StartActivityForResult(),
@@ -56,29 +61,37 @@ public class LoginActivity extends AppCompatActivity {
         btnCadastro = findViewById(R.id.btnCadastro);
         txtViewEsqueceuSenha = findViewById(R.id.textViewEsqueceuSenha);
 
-        inputEmail = findViewById(R.id.inputEmail);
-        inputSenha = findViewById(R.id.inputSenha);
+            inputLayoutUser = findViewById(R.id.inputLayoutUser);
+            inputLayoutPass = findViewById(R.id.inputLayoutPass);
 
-//        CRIAR CLASSE ADM, E UTILIZAR GET
-        clientes.add(new Cliente("adm","adm@senai.br","adm123"));
+            inputUsuario = findViewById(R.id.inputUser);
+            inputSenha = findViewById(R.id.inputPass);
+
+
+        clientes.add(new Cliente("adm", "adm@senai.br", "adm123"));
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                for (Cliente cliente : clientes) {
-                    if (inputEmail.getText().toString().equals(cliente.getUsuario())) {
-                        if (cliente.getSenha().equals(inputSenha.getText().toString())){
-                            Intent irMain = new Intent(LoginActivity.this, LoadingScreenActivity.class);
-                            irMain.putExtra("cliente", cliente);
-                            startActivity(irMain);
-                            finish();
-                        }
-                        Toast.makeText(LoginActivity.this, "USER FOI", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(LoginActivity.this, "Senha ou usuário inválidos", Toast.LENGTH_LONG).show();
-                    }
+                String usuario = inputUsuario.getText().toString().toLowerCase();
+                String senha = inputSenha.getText().toString();
 
+                for (Cliente cliente : clientes) {
+                    if (usuario.equals(cliente.getUsuario()) && senha.equals(cliente.getSenha())) {
+                        Intent intent = new Intent(LoginActivity.this, LoadingScreenActivity.class);
+                        intent.putExtra("cliente", cliente);
+                        startActivity(intent);
+
+                        String email = cliente.getEmail();
+                        salvarDados(usuario, email, senha);
+                        finish();
+                    } else {
+                        inputUsuario.getText().clear();
+                        inputSenha.getText().clear();
+                        inputLayoutUser.setHelperText("Usuário inválido!");
+                        inputLayoutPass.setHelperText("Senha inválida!");
+                    }
                 }
             }
         });
@@ -87,6 +100,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this, CadastroActivity.class);
+                intent.putExtra("clientes", (Serializable) clientes);
                 resultado.launch(intent);
             }
         });
@@ -95,10 +109,21 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, EsqueceuSenhaActivity.class);
+                intent.putExtra("clientes", (Serializable) clientes);
                 startActivity(intent);
             }
         });
-
-
     }
+
+    private void salvarDados(String usuario, String email, String senha) {
+        SharedPreferences sharedPreferences = getSharedPreferences(
+                getString(R.string.dados_cliente_shared), Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("usuario", usuario);
+        editor.putString("email", email);
+        editor.putString("senha", senha);
+        editor.commit();
+    }
+
 }

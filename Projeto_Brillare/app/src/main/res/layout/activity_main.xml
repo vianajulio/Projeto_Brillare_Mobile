@@ -9,8 +9,8 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navBarHome"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:itemHorizontalTranslationEnabled="true"
+        android:layout_height="56dp"
+        app:itemHorizontalTranslationEnabled="false"
         app:itemIconSize="32dp"
         app:itemPaddingTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,27 +24,13 @@
         android:layout_height="0dp"
         android:layout_marginTop="120dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintBottom_toTopOf="@+id/navBarHome"
+        app:layout_constraintBottom_toTopOf="@id/navBarHome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         tools:listitem="@layout/produto_item" />
-
-    <ImageButton
-        android:id="@+id/btnImgCarrinho"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
-        android:backgroundTint="@color/bege_claro"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon_cart"
-
-        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textView3"
@@ -53,8 +39,9 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:text="@string/txtBrillareTitulo"
-        android:textColor="@color/roxo"
+        android:textColor="@color/roxo_escuro"
         android:textSize="24dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -69,5 +56,16 @@
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <FrameLayout
+        android:id="@+id/frameMainActivity"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/navBarHome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

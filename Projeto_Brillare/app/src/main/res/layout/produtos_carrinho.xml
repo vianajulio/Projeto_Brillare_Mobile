@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="360dp"
+    android:layout_width="match_parent"
     android:layout_height="180dp"
-    android:layout_gravity="center_horizontal|top"
+    android:layout_marginBottom="16dp"
     android:background="@drawable/btn_bordas_arredondadas">
 
     <androidx.cardview.widget.CardView
@@ -29,7 +29,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/gato" />
+                app:srcCompat="@drawable/colar_borboleta" />
 
             <TextView
                 android:id="@+id/prodCarrinhoTitulo"
@@ -37,6 +37,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:text="@string/txtTitulo"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/prodCarrinhoImagem"
                 app:layout_constraintTop_toTopOf="@+id/prodCarrinhoImagem" />
 
@@ -44,67 +47,40 @@
                 android:id="@+id/prodCarrinhoPreco"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="64dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="32dp"
                 android:text="@string/txtPreco"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/prodCarrinhoImagem"
-                app:layout_constraintTop_toBottomOf="@+id/prodCarrinhoTitulo" />
-
-            <View
-                android:id="@+id/view"
-                android:layout_width="90dp"
-                android:layout_height="24dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/fundo_btn_carrinho_add_remove"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/view"
-                app:layout_constraintEnd_toEndOf="@+id/view"
-                app:srcCompat="@drawable/icon_add" />
-
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/view"
-                app:layout_constraintStart_toStartOf="@+id/view"
-                app:srcCompat="@drawable/icon_remove" />
-
-            <TextView
-                android:id="@+id/txtViewQuantidade"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1"
-                android:textColor="@color/roxo_escuro"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/view"
-                app:layout_constraintEnd_toStartOf="@+id/imageView3"
-                app:layout_constraintStart_toEndOf="@+id/imageView4"
-                app:layout_constraintTop_toTopOf="@+id/view" />
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/textView12" />
 
             <TextView
                 android:id="@+id/prodCarrinhoDescricao"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:maxLength="30"
                 android:text="@string/txtDescricao"
                 app:layout_constraintBottom_toTopOf="@+id/prodCarrinhoPreco"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/prodCarrinhoImagem"
                 app:layout_constraintTop_toBottomOf="@+id/prodCarrinhoTitulo"
                 app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="32dp"
+                android:text="@string/real"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/prodCarrinhoImagem" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

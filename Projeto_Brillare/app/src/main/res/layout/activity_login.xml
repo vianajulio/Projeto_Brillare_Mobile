@@ -6,105 +6,129 @@
     android:layout_height="match_parent"
     tools:context="activity.LoginActivity">
 
-    <TextView
-        android:id="@+id/SubtituloLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
-        android:text="@string/txtBrillareSubtitulo"
-        android:textSize="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/inputEmail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tituloLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="@string/txtBrillareTitulo"
-        android:textSize="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/SubtituloLogin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.866" />
-
-    <TextView
-        android:id="@+id/textViewEsqueceuSenha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="56dp"
-        android:text="Esqueceu sua senha?"
-        android:textColor="@color/roxo"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btnCadastro"
-        android:layout_width="240dp"
-        android:layout_height="48dp"
-        android:background="@drawable/btn_bordas_arredondadas_transparente"
-        android:text="@string/txtRegistreSe"
-        android:textColor="@color/roxo"
-        android:textStyle="bold"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.799" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="240dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/btn_bordas_arredondadas"
-        android:text="@string/txtLogin"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnCadastro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/inputEmail"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="32dp"
-        android:background="@drawable/input_borda"
-        android:drawableEnd="@drawable/icon_email"
-        android:drawablePadding="8dp"
-        android:hint="@string/txtEmail"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/inputSenha"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/inputSenha"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/input_borda"
-        android:drawableEnd="@drawable/icon_eye_invisivel"
-        android:drawablePadding="8dp"
-        android:hint="@string/txtSenha"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/textViewEsqueceuSenha"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+                <TextView
+                    android:id="@+id/textViewEsqueceuSenha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Esqueceu sua senha?"
+                    android:textColor="@color/roxo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/inputLayoutPass"
+                    app:layout_constraintTop_toBottomOf="@+id/inputLayoutPass" />
+
+                <Button
+                    android:id="@+id/btnCadastro"
+                    android:layout_width="240dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="32dp"
+                    android:background="@drawable/btn_bordas_arredondadas_transparente"
+                    android:text="@string/txtRegistreSe"
+                    android:textColor="@color/roxo"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_width="240dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="60dp"
+                    android:background="@drawable/btn_bordas_arredondadas"
+                    android:text="@string/txtLogin"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/inputLayoutPass" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputLayoutUser"
+                    android:layout_width="360dp"
+                    android:layout_height="88dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="64dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/txtUsuario"
+                    app:helperTextTextColor="@color/vermelho"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView6">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputUser"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:background="@android:color/transparent"
+                        android:drawableStart="@drawable/icon_user_roxo"
+                        android:drawablePadding="8dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputLayoutPass"
+                    style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox.Dense"
+                    android:layout_width="360dp"
+                    android:layout_height="88dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/txtSenha"
+                    app:helperTextTextColor="@color/vermelho"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/inputLayoutUser">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputPass"
+                        android:layout_width="match_parent"
+                        android:layout_height="64dp"
+                        android:background="@android:color/transparent"
+                        android:drawableStart="@drawable/icon_eye_invisivel"
+                        android:drawablePadding="8dp"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="64dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.033"
+                    app:srcCompat="@drawable/icone_brillare" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

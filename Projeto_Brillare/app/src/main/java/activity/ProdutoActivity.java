@@ -7,7 +7,9 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.PointerIcon;
 import android.view.View;
@@ -18,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.projeto_brillare.R;
+import com.example.projeto_brillare.databinding.ActivityProdutoBinding;
 
 import java.util.ArrayList;
 import java.util.IllegalFormatCodePointException;
@@ -27,6 +30,7 @@ import classes.Produto;
 
 public class ProdutoActivity extends AppCompatActivity {
 
+    private ActivityProdutoBinding binding;
     private ImageButton btnImgVoltarHome;
     private ImageView imageViewProduto;
     private TextView textViewTitulo, textViewDescricao, textViewPreco;
@@ -34,12 +38,15 @@ public class ProdutoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_produto);
+        binding = ActivityProdutoBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        int imagem = getIntent().getIntExtra("IMAGEM", 0);
-        String titulo = getIntent().getStringExtra("TITULO");
-        String descricao = getIntent().getStringExtra("DESCRICAO");
-        int preco = getIntent().getIntExtra("PRECO", 0);
+        Produto produto = (Produto) getIntent().getSerializableExtra("produto");
+
+        int imagem = produto.getImage();
+        String titulo = produto.getTitulo();
+        String descricao = produto.getDescricao();
+        double preco = produto.getPreco();
 
         imageViewProduto = findViewById(R.id.imageViewProduto);
         textViewTitulo = findViewById(R.id.textViewTitulo);
@@ -49,7 +56,7 @@ public class ProdutoActivity extends AppCompatActivity {
         imageViewProduto.setImageResource(imagem);
         textViewTitulo.setText(titulo);
         textViewDescricao.setText(descricao);
-        textViewPreco.setText(Integer.toString(preco));
+        textViewPreco.setText(Double.toString(preco));
 
         btnImgVoltarHome = findViewById(R.id.imageButtonVoltarHome);
         btnImgVoltarHome.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +83,7 @@ public class ProdutoActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-
     }
+
+
 }

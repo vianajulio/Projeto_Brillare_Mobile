@@ -7,9 +7,9 @@
 
     <item android:title=""
         android:icon="@drawable/icon_home"
-        android:id="@+id/icon_navBarHome"/>
+        android:id="@+id/icon_navBarHome" />
 
     <item android:title=""
-        android:icon="@drawable/icon_favorite"
+        android:icon="@drawable/icon_cart"
         android:id="@+id/icon_navBarCarrinho"/>
 </menu>

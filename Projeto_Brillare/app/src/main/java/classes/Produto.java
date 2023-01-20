@@ -7,9 +7,9 @@ public class Produto implements Serializable {
     int image;
     String titulo;
     String descricao;
-    int preco;
+    double preco;
 
-    public Produto(int image, String titulo, String descricao, int preco) {
+    public Produto(int image, String titulo, String descricao, double preco) {
         this.image = image;
         this.titulo = titulo;
         this.descricao = descricao;
@@ -28,7 +28,7 @@ public class Produto implements Serializable {
         return descricao;
     }
 
-    public int getPreco() {
+    public double getPreco() {
         return preco;
     }
 }

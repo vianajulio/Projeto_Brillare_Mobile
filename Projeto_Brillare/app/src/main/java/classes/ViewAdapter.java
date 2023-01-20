@@ -1,7 +1,6 @@
 package classes;
 
 import android.content.Context;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,33 +14,33 @@ import com.example.projeto_brillare.R;
 
 import java.util.ArrayList;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>{
+public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.MyViewHolder>{
 
     private final RecyclerViewInterface recyclerViewInterface;
 
     Context context;
     ArrayList<Produto> produtos;
 
-    public RecyclerViewAdapter(Context context, ArrayList<Produto> produtos, RecyclerViewInterface recyclerViewInterface) {
+    public ViewAdapter(Context context, ArrayList<Produto> produtos, RecyclerViewInterface recyclerViewInterface) {
         this.context = context;
         this.produtos = produtos;
         this.recyclerViewInterface = recyclerViewInterface;
     }
 
+
     @NonNull
     @Override
-    public RecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.produto_item, parent, false);
-        return new RecyclerViewAdapter.MyViewHolder(view, recyclerViewInterface);
+        return new ViewAdapter.MyViewHolder(view, recyclerViewInterface);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerViewAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewAdapter.MyViewHolder holder, int position) {
         holder.imageView.setImageResource(produtos.get(position).getImage());
         holder.textViewTitulo.setText(produtos.get(position).getTitulo());
-        holder.textViewPreco.setText(Integer.toString(produtos.get(position).getPreco()));
-//        holder.textViewDescricao.setText(produtos.get(position).getDescricao());
+        holder.textViewPreco.setText(Double.toString(produtos.get(position).getPreco()));
     }
 
     @Override
@@ -54,8 +53,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         ImageView imageView;
         TextView textViewTitulo;
         TextView textViewPreco;
-//        TextView textViewDescricao;
-
 
         private MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
@@ -63,7 +60,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             imageView = itemView.findViewById(R.id.imageViewProdutoCard);
             textViewTitulo = itemView.findViewById(R.id.tituloProduto);
             textViewPreco = itemView.findViewById(R.id.precoProduto);
-//            textViewDescricao = itemView.findViewById(R.id.descricaoProduto);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
